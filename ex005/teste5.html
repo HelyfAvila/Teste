@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title> Inverter Texto</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>Inverter texto</h1>
+    <input type="text" name="texto" id="texto">
+    <button onclick="Inverter()">Inverta o texto!</button>
+
+    <p id="resultado"></p>
+    <footer>
+      <p>&copy; Dev: Helyf Avila</p>
+    </footer>
+
+    <script>
+    function Inverter() {
+          let texto = document.getElementById('texto').value;
+          let resultado = document.getElementById('resultado');
+          resultado.innerHTML = "";
+          if (typeof texto == 'number' || !isNaN(texto)) { //!isNaN(texto)  expressão lógica que verifica se a variável 
+              //texto não é um número. 
+              alert('[ERRO] Permitido somente strings!'); //Mostra erro para caso o item não seja uma string
+              return;
+          } else {
+              for (let i = texto.length - 1; i >= 0; i--) { //Utilizado para inverter strings
+              resultado.innerHTML += texto[i];
+              }
+          }
+      }
+      
+    </script>
+  </body>
+</html>

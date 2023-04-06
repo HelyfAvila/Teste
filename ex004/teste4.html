@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>Faturamento Distruibuidora</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>Faturamento Mensal</h1>
+    
+    <button onclick="FaturamentoMensal()">Faturamento Mensal</button>
+
+    <p id="resultado"></p>
+    <footer>
+      <p>&copy; Dev: Helyf Avila</p>
+    </footer>
+
+    <script>
+      // Declaração de uma lista com o faturamento mensal de uma distribuidora
+      let Faturamento = [67836.43 , 36678.66, 29229.88, 27165.48, 19849.53 ];
+      
+      // Definição da função que será chamada pelo botão na página HTML
+      function FaturamentoMensal(){
+          let soma = 0; // variável para armazenar a soma dos valores do faturamento
+          let percentuais = []; // variável para armazenar os percentuais de cada estado
+          for (let i = 0; i < Faturamento.length; i++) { // itera sobre cada valor do faturamento
+              soma += Faturamento[i]; // adiciona o valor atual da iteração à soma
+          }
+          for(let i = 0; i < Faturamento.length; i++){ // itera sobre cada valor do faturamento novamente
+            let percentual = (Faturamento[i] / soma) * 100; // calcula o percentual atual da iteração
+            percentuais.push(percentual.toFixed(2)); // adiciona o percentual atual à lista de percentuais, com 2 casas decimais
+          }
+          resultado.innerHTML += `A soma dos valores é igual a ${soma} e o percentual que cada valor representa é ${percentuais.join(', ')}` // atualiza o HTML com a soma dos valores e a lista de percentuais
+      } 
+    </script>
+  </body>
+</html>
